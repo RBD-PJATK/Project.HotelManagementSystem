@@ -359,4 +359,83 @@ Here are example SQL queries for a few of the functional requirements:
    SELECT GuestID, COUNT(*) as ReservationCount FROM Reservations GROUP BY GuestID HAVING COUNT(*) > 5 
 
    ``` 
- 
+
+
+
+
+ Sure! Here are some SQL `INSERT` statements to populate the Hotel Reservation System with sample data.
+
+### Insert Data into Guests Table
+
+```sql
+INSERT INTO Guests (ID, Name, Surname, DateOfBirth, Email, PhoneNumber, Address, MembershipStatus)
+VALUES (1, 'John', 'Doe', TO_DATE('1985-01-15', 'YYYY-MM-DD'), 'john.doe@example.com', '123-456-7890', '123 Elm St', 'Regular');
+
+INSERT INTO Guests (ID, Name, Surname, DateOfBirth, Email, PhoneNumber, Address, MembershipStatus)
+VALUES (2, 'Jane', 'Smith', TO_DATE('1990-05-22', 'YYYY-MM-DD'), 'jane.smith@example.com', '987-654-3210', '456 Oak St', 'VIP');
+```
+
+### Insert Data into Employees Table
+
+```sql
+INSERT INTO Employees (ID, Name, Surname, DateOfEmployment, DateOfDismissal, Role, Email, PhoneNumber, Biography)
+VALUES (1, 'Alice', 'Johnson', TO_DATE('2020-01-10', 'YYYY-MM-DD'), NULL, 'Manager', 'alice.johnson@example.com', '555-123-4567', 'Experienced manager with 10 years in the hospitality industry.');
+
+INSERT INTO Employees (ID, Name, Surname, DateOfEmployment, DateOfDismissal, Role, Email, PhoneNumber, Biography)
+VALUES (2, 'Bob', 'Williams', TO_DATE('2021-06-15', 'YYYY-MM-DD'), NULL, 'Receptionist', 'bob.williams@example.com', '555-234-5678', NULL);
+```
+
+### Insert Data into Rooms Table
+
+```sql
+INSERT INTO Rooms (RoomNumber, RoomType, PricePerNight, Amenities, Status)
+VALUES (101, 'Single', 100, 'WiFi, TV, Minibar', 'Available');
+
+INSERT INTO Rooms (RoomNumber, RoomType, PricePerNight, Amenities, Status)
+VALUES (102, 'Double', 150, 'WiFi, TV, Minibar, Balcony', 'Available');
+
+INSERT INTO Rooms (RoomNumber, RoomType, PricePerNight, Amenities, Status)
+VALUES (201, 'Suite', 300, 'WiFi, TV, Minibar, Balcony, Jacuzzi', 'Occupied');
+```
+
+### Insert Data into Reservations Table
+
+```sql
+INSERT INTO Reservations (ReservationID, GuestID, RoomNumber, CheckInDate, CheckOutDate, Status)
+VALUES (1, 1, 101, TO_DATE('2024-07-01', 'YYYY-MM-DD'), TO_DATE('2024-07-07', 'YYYY-MM-DD'), 'Confirmed');
+
+INSERT INTO Reservations (ReservationID, GuestID, RoomNumber, CheckInDate, CheckOutDate, Status)
+VALUES (2, 2, 201, TO_DATE('2024-08-01', 'YYYY-MM-DD'), TO_DATE('2024-08-14', 'YYYY-MM-DD'), 'Checked-in');
+```
+
+### Insert Data into Payments Table
+
+```sql
+INSERT INTO Payments (PaymentID, GuestID, ReservationID, Date, TypeOfPayment, Amount)
+VALUES (1, 1, 1, TO_DATE('2024-07-01', 'YYYY-MM-DD'), 'Card', 700);
+
+INSERT INTO Payments (PaymentID, GuestID, ReservationID, Date, TypeOfPayment, Amount)
+VALUES (2, 2, 2, TO_DATE('2024-08-01', 'YYYY-MM-DD'), 'Online', 4200);
+```
+
+### Insert Data into Services Table
+
+```sql
+INSERT INTO Services (ServiceID, ServiceType, DateAndTime, Charge, EmployeeID)
+VALUES (1, 'Room Service', TO_TIMESTAMP('2024-07-02 14:00:00', 'YYYY-MM-DD HH24:MI:SS'), 50, 2);
+
+INSERT INTO Services (ServiceID, ServiceType, DateAndTime, Charge, EmployeeID)
+VALUES (2, 'Laundry', TO_TIMESTAMP('2024-08-02 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 30, 2);
+```
+
+### Insert Data into Feedback Table
+
+```sql
+INSERT INTO Feedback (FeedbackID, GuestID, Date, Comments, Ratings)
+VALUES (1, 1, TO_DATE('2024-07-07', 'YYYY-MM-DD'), 'Great stay, very comfortable!', 5);
+
+INSERT INTO Feedback (FeedbackID, GuestID, Date, Comments, Ratings)
+VALUES (2, 2, TO_DATE('2024-08-14', 'YYYY-MM-DD'), 'Excellent service and amenities.', 5);
+```
+
+These SQL statements insert sample data into the tables of the Hotel Reservation System, populating each table with a few entries to provide a working example.
