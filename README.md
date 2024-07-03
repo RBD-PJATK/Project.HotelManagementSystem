@@ -362,8 +362,7 @@ Here are example SQL queries for a few of the functional requirements:
 
 
 
-
- Sure! Here are some SQL `INSERT` statements to populate the Hotel Reservation System with sample data.
+## Insert Data 
 
 ### Insert Data into Guests Table
 
@@ -437,5 +436,3 @@ VALUES (1, 1, TO_DATE('2024-07-07', 'YYYY-MM-DD'), 'Great stay, very comfortable
 INSERT INTO Feedback (FeedbackID, GuestID, Date, Comments, Ratings)
 VALUES (2, 2, TO_DATE('2024-08-14', 'YYYY-MM-DD'), 'Excellent service and amenities.', 5);
 ```
-
-These SQL statements insert sample data into the tables of the Hotel Reservation System, populating each table with a few entries to provide a working example.
